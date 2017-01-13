@@ -56,7 +56,7 @@ function reloadMobs()
 	sleep(1.5)
 	listMenu = touchpoint.new("left")
 	listMenu:add("Current Mob:  "..curMob, nil, 2, 2, 3, 2, 128, 128)
-	listMenu:add("Spawn Exact", spawnExact, 35,2, 50, 25)
+	listMenu:add("Spawn Exact", spawnExact, 35,2, 50, 2, 128, 128)
 	for i=1,slotnum do
 		local tableInfo = eggs.getStackInSlot(i)
 
