@@ -74,7 +74,7 @@ function reloadMobs()
 
 end
 		t= listMenu
-end
+
 
 	loading:add("Loading...", nil,1,2,40,5,colors.gray, colors.gray)
 
