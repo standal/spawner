@@ -1,95 +1,92 @@
-os.loadAPI("lib/touchpoint")
-local listMenu = touchpoint.new("left")
-local buttons = touchpoint.new("left")
-local loading = touchpoint.new("left")
-local t
-local power = 0
-rednet.open("right")
-mon = peripheral.wrap("left")
-eggs = peripheral.wrap("copper_0")
-target = peripheral.wrap ("gold_0")
-local slotnum = eggs.getInventorySize()
-local topline = paintutils.loadImage ("lib/aLogo")
-local col = 2
-local row = 5
-local curMob = 0
+os.loadAPI ("button")
+m = peripheral.wrap ("top")
+p = peripheral.wrap ("back")
+m.clear ()
 
-
-function listPage()
-	reloadMobs()
-	t = listMenu
+function fillTable ()
+	button.setTable ("button1", peat, 3, 17, 1, 3)
+	button.setTable ("button2", pumpkin, 3, 17, 5, 7)
+	button.setTable ("button3", melon, 3, 17, 9, 11)
+	button.setTable ("button4", netherwart, 3, 17, 13, 15)
+	button.setTable ("button5", wheat1, 3, 17, 17, 19)
+	button.setTable ("button6", wheat2, 23, 37, 1, 3)
+	button.setTable ("button7", oak, 23, 37, 5, 7)
+	button.setTable ("button8", birch, 23, 37, 9, 11)
+	button.setTable ("button9", spruce, 23, 37, 13, 15)
+	button.setTable ("button10", jungle, 23, 37, 17, 19)
+	button.screen ()
 end
 
-function loadingPage()
-	t = loading
+function getClick ()
+	event, side, x, y = os.pullEvent ("monitor_touch")
+	button.checkxy (x, y)
 end
 
-function moveMob(i, mobName)
-
-	loadingPage()
-	print("Moving mob:  ".. i .." "..mobName)
-	curMob = mobName
-	eggs.pushItem("north", i, 1, 1)
-	reloadMobs()
+function pulse ()
+	redstone.setOutput ("back", true)
+	sleep (0, 5)
+	redstone.setOutput ("back", false)
 end
 
-function spawnExact()
-	rs.setOutput("top", false)
-	sleep(1)
-	rednet.send(43, "switchState")
-	sleep(5)
--- rednet.send(43, "switchState")
-	sleep(1)
--- rs.setOutput("top", false)
+function peat ()
+	button.toggleButton ("button1")
+	p.setFreq (151)
+	pulse ()
 end
 
-function callButton(name)
-	if type(t.buttonList[name].func) == "function" then
-		t.buttonList[name].func()
-	end
+function pumpkin ()
+	button.toggleButton ("button2")
+	p.setFreq (152)
+	pulse ()
 end
 
-function reloadMobs()
-	t = loading
-	local row = 5
-	local col = 2
-	sleep(1.5)
-	listMenu = touchpoint.new("left")
-	listMenu:add("Current Mob:  "..curMob, nil, 2, 2, 3, 2, 128, 128)
-	listMenu:add("Spawn Exact", spawnExact, 35,2, 50, 2, 128, 128)
-	for i=1,slotnum do
-		local tableInfo = eggs.getStackInSlot(i)
-
-		if tableInfo ~= nil then
-			for key, value in pairs(tableInfo) do
-				if key == "captured" then
-					print(value .. " i = " .. i)
-					print(row)
-					listMenu:add(value, function() moveMob(i, value, function())
-						row = row + 2
-					end
-				end
-		else
-	end
-
+function melon ()
+	button.toggleButton ("button3")
+	p.setFreq (153)
+	pulse ()
 end
-		t= listMenu
 
+function netherwart ()
+	button.toggleButton ("button4")
+	p.setFreq (154)
+	pulse ()
+end
 
-	loading:add("Loading...", nil,1,2,40,5,colors.gray, colors.gray)
+function wheat1 ()
+	button.toggleButton ("button5")
+	p.setFreq (155)
+	pulse ()
+end
 
-	listPage()
+function wheat2 ()
+	button.toggleButton ("button6")
+	p.setFreq (156)
+	pulse ()
+end
 
-	while true do
-		t:draw()
-			local event, p1 = t:handleEvents(os.pullEvent())
-			if event == "button_click" then
-			t:flash(p1)
-			t.buttonList[p1].func()
-			end
-		end
+function oak ()
+	button.toggleButton ("button7")
+	p.setFreq (157)
+	pulse ()
+end
 
+function birch ()
+	button.toggleButton ("button8")
+	p.setFreq (158)
+	pulse ()
+end
 
+function spruce ()
+	button.toggleButton ("button9")
+	p.setFreq (159)
+	pulse ()
+end
 
+function jungle ()
+	button.toggleButton ("button10")
+	p.setFreq (160)
+	pulse ()
+end
 
-
+fillTable ()
+while true do getClick () end
