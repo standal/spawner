@@ -1,19 +1,18 @@
-os.loadAPI ("button")
+os.loadAPI ("lib/button")
 m = peripheral.wrap ("top")
-p = peripheral.wrap ("back")
 m.clear ()
 
 function fillTable ()
-	button.setTable ("button1", peat, 3, 17, 1, 3)
-	button.setTable ("button2", pumpkin, 3, 17, 5, 7)
-	button.setTable ("button3", melon, 3, 17, 9, 11)
-	button.setTable ("button4", netherwart, 3, 17, 13, 15)
-	button.setTable ("button5", wheat1, 3, 17, 17, 19)
-	button.setTable ("button6", wheat2, 23, 37, 1, 3)
-	button.setTable ("button7", oak, 23, 37, 5, 7)
-	button.setTable ("button8", birch, 23, 37, 9, 11)
-	button.setTable ("button9", spruce, 23, 37, 13, 15)
-	button.setTable ("button10", jungle, 23, 37, 17, 19)
+	button.setTable ("button1", button1, 3, 17, 1, 3)
+	button.setTable ("button2", button2, 3, 17, 5, 7)
+	button.setTable ("button3", button3, 3, 17, 9, 11)
+	button.setTable ("button4", button4, 3, 17, 13, 15)
+	button.setTable ("button5", button5, 3, 17, 17, 19)
+	button.setTable ("button6", button6, 23, 37, 1, 3)
+	button.setTable ("button7", button7, 23, 37, 5, 7)
+	button.setTable ("button8", button8, 23, 37, 9, 11)
+	button.setTable ("button9", button9, 23, 37, 13, 15)
+	button.setTable ("button10", button10, 23, 37, 17, 19)
 	button.screen ()
 end
 
@@ -28,63 +27,63 @@ function pulse ()
 	redstone.setOutput ("back", false)
 end
 
-function peat ()
+function button1 ()
 	button.toggleButton ("button1")
-	p.setFreq (151)
+	rs.setAnalogOutput ("back", 15)
 	pulse ()
 end
 
-function pumpkin ()
+function button2 ()
 	button.toggleButton ("button2")
-	p.setFreq (152)
+	rs.setAnalogOutput ("back", 15)
 	pulse ()
 end
 
-function melon ()
+function button3 ()
 	button.toggleButton ("button3")
-	p.setFreq (153)
+	rs.setAnalogOutput ("back", 15)
 	pulse ()
 end
 
-function netherwart ()
+function button4 ()
 	button.toggleButton ("button4")
-	p.setFreq (154)
+	rs.setAnalogOutput ("back", 15)
 	pulse ()
 end
 
-function wheat1 ()
+function button5 ()
 	button.toggleButton ("button5")
-	p.setFreq (155)
+	rs.setAnalogOutput ("back", 15)
 	pulse ()
 end
 
-function wheat2 ()
+function button6 ()
 	button.toggleButton ("button6")
-	p.setFreq (156)
+	rs.setAnalogOutput ("back", 15)
 	pulse ()
 end
 
-function oak ()
+function button7 ()
 	button.toggleButton ("button7")
-	p.setFreq (157)
+	rs.setAnalogOutput ("back", 15)
 	pulse ()
 end
 
-function birch ()
+function button8 ()
 	button.toggleButton ("button8")
-	p.setFreq (158)
+	rs.setAnalogOutput ("back", 15)
 	pulse ()
 end
 
-function spruce ()
+function button9 ()
 	button.toggleButton ("button9")
-	p.setFreq (159)
+	rs.setAnalogOutput ("back", 15)
 	pulse ()
 end
 
-function jungle ()
+function button10 ()
 	button.toggleButton ("button10")
-	p.setFreq (160)
+	rs.setAnalogOutput ("back", 15)
 	pulse ()
 end
 
