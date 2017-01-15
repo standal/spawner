@@ -49,7 +49,7 @@ function screen()
    local currColor
    for name,data in pairs(button) do
       local on = data["active"]
-      if on == true then currColor = colors.lime else currColor = colors.red end
+      if on == true then currColor = colors.lime else currColor = colors.lightGray end
       fill(name, currColor, data)
    end
 end
