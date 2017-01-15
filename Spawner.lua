@@ -21,22 +21,28 @@ function getClick ()
 	button.checkxy (x, y)
 end
 
-function pulse ()
-	redstone.setOutput ("back", true)
+function pulse1 ()
+	rs.setAnalogOutput ("back", 1)
 	sleep (3)
-	redstone.setOutput ("back", false)
+	rs.setAnalogOutput ("back", 0)
 end
 
 function button1 ()
 	button.toggleButton ("button1")
 	rs.setAnalogOutput ("back", 1)
-	pulse ()
+	pulse1 ()
+end
+
+function pulse2 ()
+	rs.setAnalogOutput ("back", 2)
+	sleep (3)
+	rs.setAnalogOutput ("back", 0)
 end
 
 function button2 ()
 	button.toggleButton ("button2")
 	rs.setAnalogOutput ("back", 2)
-	pulse ()
+	pulse2 ()
 end
 
 function button3 ()
