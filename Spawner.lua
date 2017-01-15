@@ -23,67 +23,67 @@ end
 
 function pulse ()
 	redstone.setOutput ("back", true)
-	sleep (0, 5)
+	sleep (3)
 	redstone.setOutput ("back", false)
 end
 
 function button1 ()
 	button.toggleButton ("button1")
-	rs.setAnalogOutput ("back", 15)
+	rs.setAnalogOutput ("back", 1)
 	pulse ()
 end
 
 function button2 ()
 	button.toggleButton ("button2")
-	rs.setAnalogOutput ("back", 15)
+	rs.setAnalogOutput ("back", 2)
 	pulse ()
 end
 
 function button3 ()
 	button.toggleButton ("button3")
-	rs.setAnalogOutput ("back", 15)
+	rs.setAnalogOutput ("back", 3)
 	pulse ()
 end
 
 function button4 ()
 	button.toggleButton ("button4")
-	rs.setAnalogOutput ("back", 15)
+	rs.setAnalogOutput ("back", 4)
 	pulse ()
 end
 
 function button5 ()
 	button.toggleButton ("button5")
-	rs.setAnalogOutput ("back", 15)
+	rs.setAnalogOutput ("back", 5)
 	pulse ()
 end
 
 function button6 ()
 	button.toggleButton ("button6")
-	rs.setAnalogOutput ("back", 15)
+	rs.setAnalogOutput ("back", 6)
 	pulse ()
 end
 
 function button7 ()
 	button.toggleButton ("button7")
-	rs.setAnalogOutput ("back", 15)
+	rs.setAnalogOutput ("back", 7)
 	pulse ()
 end
 
 function button8 ()
 	button.toggleButton ("button8")
-	rs.setAnalogOutput ("back", 15)
+	rs.setAnalogOutput ("back", 8)
 	pulse ()
 end
 
 function button9 ()
 	button.toggleButton ("button9")
-	rs.setAnalogOutput ("back", 15)
+	rs.setAnalogOutput ("back", 9)
 	pulse ()
 end
 
 function button10 ()
 	button.toggleButton ("button10")
-	rs.setAnalogOutput ("back", 15)
+	rs.setAnalogOutput ("back", 10)
 	pulse ()
 end
 
